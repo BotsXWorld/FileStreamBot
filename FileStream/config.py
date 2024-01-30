@@ -16,7 +16,7 @@ class Telegram:
     FORCE_SUB = env.get('FORCE_UPDATES_CHANNEL', False)
     FORCE_SUB = True if str(FORCE_SUB).lower() == "true" else False
     SLEEP_THRESHOLD = int(env.get("SLEEP_THRESHOLD", "60"))
-    FILE_PIC = env.get('FILE_PIC', "https://graph.org/file/5bb9935be0229adf98b73.jpg")
+    FILE_PIC = env.get('FILE_PIC', "https://te.legra.ph/file/16f7a9ab3e1d7d557b1a9.jpg")
     START_PIC = env.get('START_PIC', None)
     VERIFY_PIC = env.get('VERIFY_PIC', None)
     MULTI_CLIENT = False
