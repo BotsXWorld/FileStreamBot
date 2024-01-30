@@ -52,8 +52,8 @@ async def cb_data(bot, update: CallbackQuery):
         return
     elif usr_cmd[0] == "msgdelpvt":
         await update.message.edit_caption(
-        caption= "**Cᴏɴғɪʀᴍ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴛʜᴇ Fɪʟᴇ**\n\n",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ʏᴇs", callback_data=f"msgdelpvtyes_{usr_cmd[1]}"), InlineKeyboardButton("ɴᴏ", callback_data=f"mainstream_{usr_cmd[1]}")]])
+        caption= "**Confirm You Want To Delete the File**\n\n",
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Yes", callback_data=f"msgdelpvtyes_{usr_cmd[1]}"), InlineKeyboardButton("ɴᴏ", callback_data=f"mainstream_{usr_cmd[1]}")]])
     )
     elif usr_cmd[0] == "msgdelpvtyes":
         await delete_user_filex(usr_cmd[1], update)
@@ -106,8 +106,8 @@ async def gen_file_list_button(file_list_no: int, user_id: int):
         )
     if not file_list:
         file_list.append(
-                [InlineKeyboardButton("ᴇᴍᴘᴛʏ", callback_data="N/A")])
-    file_list.append([InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")])
+                [InlineKeyboardButton("Empty", callback_data="N/A")])
+    file_list.append([InlineKeyboardButton("Close", callback_data="close")])
     return file_list, total_files
 
 async def gen_file_menu(_id, file_list_no, update: CallbackQuery):
@@ -139,19 +139,19 @@ async def gen_file_menu(_id, file_list_no, update: CallbackQuery):
     if "video" in file_type.lower():
         MYFILES_BUTTONS = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("sᴛʀᴇᴀᴍ", url=page_link), InlineKeyboardButton("ᴅᴏᴡɴʟᴏᴀᴅ", url=stream_link)],
-                [InlineKeyboardButton("ɢᴇᴛ ғɪʟᴇ", callback_data=f"sendfile_{myfile_info['_id']}"),
-                 InlineKeyboardButton("ʀᴇᴠᴏᴋᴇ ғɪʟᴇ", callback_data=f"msgdelete_{myfile_info['_id']}_{file_list_no}")],
-                [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="userfiles_{}".format(file_list_no))]
+                [InlineKeyboardButton("Stream", url=page_link), InlineKeyboardButton("ᴅᴏᴡɴʟᴏᴀᴅ", url=stream_link)],
+                [InlineKeyboardButton("Get File", callback_data=f"sendfile_{myfile_info['_id']}"),
+                 InlineKeyboardButton("Revoke File", callback_data=f"msgdelete_{myfile_info['_id']}_{file_list_no}")],
+                [InlineKeyboardButton("Back", callback_data="userfiles_{}".format(file_list_no))]
             ]
         )
     else:
         MYFILES_BUTTONS = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("ᴅᴏᴡɴʟᴏᴀᴅ", url=stream_link)],
-                [InlineKeyboardButton("ɢᴇᴛ ғɪʟᴇ", callback_data=f"sendfile_{myfile_info['_id']}"),
-                 InlineKeyboardButton("ʀᴇᴠᴏᴋᴇ ғɪʟᴇ", callback_data=f"msgdelete_{myfile_info['_id']}_{file_list_no}")],
-                [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="userfiles_{}".format(file_list_no))]
+                [InlineKeyboardButton("Download", url=stream_link)],
+                [InlineKeyboardButton("Get File", callback_data=f"sendfile_{myfile_info['_id']}"),
+                 InlineKeyboardButton("Revoke File", callback_data=f"msgdelete_{myfile_info['_id']}_{file_list_no}")],
+                [InlineKeyboardButton("Back", callback_data="userfiles_{}".format(file_list_no))]
             ]
         )
 
