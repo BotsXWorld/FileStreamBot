@@ -26,10 +26,10 @@ that's it, I will add the file link in the message ad button
 🐞 Report Bugs At Support. <a href='https://telegram.me/anocy'>Owner</a>"""
 
     ABOUT_TEXT = """
-<b>🤖 Bot Name : {}</b>\n
-<b>Version : {}</b>
-<b>Last Updated : 31-January-2024</b>
-<b>Developer: <a href='https://telegram.me/Anocy'>Anocy</a></b>\n
+<b>🤖 Bot Name :</b>{}\n
+<b>- Version :</b> {}
+<b>- Last Updated :</b> 31-January-2024
+<b>- Developer:</b> <a href='https://telegram.me/Anocy'>Anocy</a>\n
 """
 
     STREAM_TEXT = """
